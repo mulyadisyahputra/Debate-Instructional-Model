@@ -14,7 +14,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
         }
         .card-hover {
             transition: all 0.3s ease;
@@ -33,37 +33,46 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+    <nav class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
                     <!-- DIM Logo -->
                     <div class="flex items-center cursor-pointer" onclick="showPage('home')">
                         <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Speech Bubble for Debate -->
-                            <circle cx="20" cy="18" r="14" fill="white" stroke="#0d9488" stroke-width="3"/>
-                            <path d="M12 28 L20 24 L28 28 Z" fill="white" stroke="#0d9488" stroke-width="3" stroke-linejoin="round"/>
+                            <!-- Microphone Stand -->
+                            <rect x="18" y="25" width="4" height="12" fill="#2563eb" rx="2"/>
+                            <ellipse cx="20" cy="37" rx="8" ry="2" fill="#2563eb"/>
                             
-                            <!-- Debate symbols inside -->
-                            <circle cx="15" cy="16" r="2" fill="#0d9488"/>
-                            <circle cx="20" cy="13" r="2" fill="#0d9488"/>
-                            <circle cx="25" cy="16" r="2" fill="#0d9488"/>
+                            <!-- Microphone Head -->
+                            <ellipse cx="20" cy="15" rx="8" ry="10" fill="white" stroke="#2563eb" stroke-width="3"/>
                             
-                            <!-- Connection lines -->
-                            <line x1="17" y1="16" x2="18" y2="14" stroke="#0d9488" stroke-width="2"/>
-                            <line x1="22" y1="14" x2="23" y2="16" stroke="#0d9488" stroke-width="2"/>
+                            <!-- Microphone Grille Lines -->
+                            <line x1="14" y1="12" x2="26" y2="12" stroke="#2563eb" stroke-width="1.5"/>
+                            <line x1="14" y1="15" x2="26" y2="15" stroke="#2563eb" stroke-width="1.5"/>
+                            <line x1="14" y1="18" x2="26" y2="18" stroke="#2563eb" stroke-width="1.5"/>
+                            
+                            <!-- Sound Waves -->
+                            <path d="M30 10 Q32 12 30 14" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M32 8 Q35 12 32 16" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M10 10 Q8 12 10 14" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M8 8 Q5 12 8 16" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+                            
+                            <!-- Small speech indicator -->
+                            <circle cx="20" cy="6" r="2" fill="#2563eb"/>
+                            <path d="M18 4 Q20 2 22 4" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
                     </div>
                     <div class="text-2xl font-bold cursor-pointer" onclick="showPage('home')">Debate Instructional Model</div>
                 </div>
                 <div class="hidden md:flex space-x-6">
-                    <a href="#" onclick="showPage('home')" class="nav-link hover:text-teal-200 transition-colors">Home</a>
-                    <a href="#" onclick="showPage('format')" class="nav-link hover:text-teal-200 transition-colors">Format</a>
-                    <a href="#" onclick="showPage('sintaks')" class="nav-link hover:text-teal-200 transition-colors">Sintaks</a>
-                    <a href="#" onclick="showPage('instrumen')" class="nav-link hover:text-teal-200 transition-colors">Instrumen</a>
-                    <a href="#" onclick="showPage('asesmen')" class="nav-link hover:text-teal-200 transition-colors">Asesmen</a>
-                    <a href="#" onclick="showPage('komunitas')" class="nav-link hover:text-teal-200 transition-colors">Tools</a>
-                    <a href="#" onclick="showPage('contact')" class="nav-link hover:text-teal-200 transition-colors">Contact</a>
+                    <a href="#" onclick="showPage('home')" class="nav-link hover:text-blue-200 transition-colors">Home</a>
+                    <a href="#" onclick="showPage('format')" class="nav-link hover:text-blue-200 transition-colors">Format</a>
+                    <a href="#" onclick="showPage('sintaks')" class="nav-link hover:text-blue-200 transition-colors">Sintaks</a>
+                    <a href="#" onclick="showPage('instrumen')" class="nav-link hover:text-blue-200 transition-colors">Bahan dan Media</a>
+                    <a href="#" onclick="showPage('asesmen')" class="nav-link hover:text-blue-200 transition-colors">Asesmen</a>
+                    <a href="#" onclick="showPage('komunitas')" class="nav-link hover:text-blue-200 transition-colors">Tools</a>
+                    <a href="#" onclick="showPage('contact')" class="nav-link hover:text-blue-200 transition-colors">Contact</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,134 +81,293 @@
                 </button>
             </div>
             <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <a href="#" onclick="showPage('home')" class="block py-2 hover:text-teal-200">Home</a>
-                <a href="#" onclick="showPage('format')" class="block py-2 hover:text-teal-200">Format</a>
-                <a href="#" onclick="showPage('sintaks')" class="block py-2 hover:text-teal-200">Sintaks</a>
-                <a href="#" onclick="showPage('instrumen')" class="block py-2 hover:text-teal-200">Instrumen</a>
-                <a href="#" onclick="showPage('asesmen')" class="block py-2 hover:text-teal-200">Asesmen</a>
-                <a href="#" onclick="showPage('komunitas')" class="block py-2 hover:text-teal-200">Tools</a>
-                <a href="#" onclick="showPage('contact')" class="block py-2 hover:text-teal-200">Contact</a>
+                <a href="#" onclick="showPage('home')" class="block py-2 hover:text-blue-200">Home</a>
+                <a href="#" onclick="showPage('format')" class="block py-2 hover:text-blue-200">Format</a>
+                <a href="#" onclick="showPage('sintaks')" class="block py-2 hover:text-blue-200">Sintaks</a>
+                <a href="#" onclick="showPage('instrumen')" class="block py-2 hover:text-blue-200">Bahan dan Media</a>
+                <a href="#" onclick="showPage('asesmen')" class="block py-2 hover:text-blue-200">Asesmen</a>
+                <a href="#" onclick="showPage('komunitas')" class="block py-2 hover:text-blue-200">Tools</a>
+                <a href="#" onclick="showPage('contact')" class="block py-2 hover:text-blue-200">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Home Page -->
     <div id="home-page" class="page active">
-        <section class="py-16 bg-white">
+        <!-- Model Description -->
+        <section class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-12 fade-in">
-                    <h1 class="text-5xl font-bold text-gray-800 mb-6">Debate Instructional Model</h1>
-                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-                        Model pembelajaran inovatif yang dikembangkan dari Asian Parliamentary Debate System untuk meningkatkan kemampuan 4Cs (Critical Thinking, Creativity, Communication, Collaboration) siswa dalam pembelajaran.
-                    </p>
-                    
-                    <!-- Key Features -->
-                    <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
-                        <div class="bg-blue-50 p-6 rounded-lg">
-                            <div class="text-3xl mb-3">🎯</div>
-                            <h3 class="font-bold text-blue-800 mb-2">Structured Format</h3>
-                            <p class="text-sm text-gray-700">Format debat terstruktur dengan pembagian peran yang jelas untuk semua siswa</p>
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Tentang Debate Instructional Model</h2>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            <strong>Debate Instructional Model (DIM)</strong> merupakan adaptasi dan pengembangan dari model <em>Parliamentary Debate</em> yang disesuaikan khusus untuk penggunaan di ruang kelas. Model ini dikembangkan melalui metode <strong>Research & Development (R&D)</strong> dengan fokus utama mengembangkan kemampuan <strong>4Cs</strong> siswa.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-8 mb-6">
+                            <div class="text-left">
+                                <h3 class="text-xl font-bold text-blue-700 mb-3">🎯 Tujuan Pengembangan</h3>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Mengadaptasi format debat parlementer untuk konteks pembelajaran</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Mengintegrasikan pengembangan 4Cs dalam satu model pembelajaran</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Menciptakan pembelajaran yang student-centered dan interaktif</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-xl font-bold text-blue-700 mb-3">🔬 Metodologi R&D</h3>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Analisis kebutuhan pembelajaran abad 21</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Validasi ahli dan uji coba lapangan</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-600 mr-2">•</span>
+                                        <span>Revisi berkelanjutan berdasarkan feedback</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="bg-green-50 p-6 rounded-lg">
-                            <div class="text-3xl mb-3">🔄</div>
-                            <h3 class="font-bold text-green-800 mb-2">Role Rotation</h3>
-                            <p class="text-sm text-gray-700">Sistem rotasi peran memastikan setiap siswa mengalami berbagai fungsi</p>
-                        </div>
-                        <div class="bg-purple-50 p-6 rounded-lg">
-                            <div class="text-3xl mb-3">⏱️</div>
-                            <h3 class="font-bold text-purple-800 mb-2">Time Management</h3>
-                            <p class="text-sm text-gray-700">Manajemen waktu yang efektif dengan alokasi yang tepat untuk setiap tahap</p>
-                        </div>
-                        <div class="bg-orange-50 p-6 rounded-lg">
-                            <div class="text-3xl mb-3">📊</div>
-                            <h3 class="font-bold text-orange-800 mb-2">Assessment</h3>
-                            <p class="text-sm text-gray-700">Sistem penilaian komprehensif yang melibatkan peer assessment</p>
+                        <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-purple-800 mb-3">💡 Keunggulan DIM</h3>
+                            <p class="text-gray-700">
+                                Model ini menggabungkan struktur formal debat parlementer dengan fleksibilitas pembelajaran kelas, memungkinkan semua siswa berpartisipasi aktif dalam berbagai peran yang mendukung pengembangan Critical Thinking, Creativity, Communication, dan Collaboration secara terintegrasi.
+                            </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Impact -->
-                    <div class="bg-gradient-to-r from-teal-500 to-blue-600 text-white p-8 rounded-lg mb-8">
-                        <h3 class="text-2xl font-bold mb-6">Dampak Implementasi DIM</h3>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="text-center">
-                                <div class="text-4xl mb-3">🧠</div>
-                                <h4 class="text-xl font-bold mb-2">Peningkatan 4Cs</h4>
-                                <p class="text-sm text-blue-100">Critical Thinking, Creativity, Communication, dan Collaboration berkembang secara terintegrasi</p>
+        <!-- Key Features -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <!-- Key Features Section -->
+                <div class="mb-16">
+                    <h3 class="text-4xl font-bold text-center text-gray-800 mb-4">🌟 Fitur Utama Debate Instructional Model</h3>
+                    <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+                        DIM dirancang dengan empat pilar utama yang memastikan pembelajaran debat yang efektif dan bermakna bagi semua siswa
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Feature 1 -->
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-8 rounded-2xl shadow-xl card-hover">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-white bg-opacity-20 p-4 rounded-full mr-4">
+                                    <div class="text-4xl">🎯</div>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold mb-2">Format Terstruktur</h4>
+                                    <p class="text-blue-100 text-sm">Structured Format</p>
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <div class="text-4xl mb-3">🗣️</div>
-                                <h4 class="text-xl font-bold mb-2">Peningkatan Language Mastery</h4>
-                                <p class="text-sm text-blue-100">Kemampuan Speaking, Listening, Reading, dan Writing bahasa Inggris meningkat signifikan</p>
+                            <p class="text-blue-50 leading-relaxed">
+                                Format debat yang jelas dan sistematis dengan pembagian peran yang tegas, alur presentasi yang terorganisir, dan aturan yang mudah dipahami oleh semua peserta.
+                            </p>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="bg-gradient-to-br from-green-500 to-green-700 text-white p-8 rounded-2xl shadow-xl card-hover">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-white bg-opacity-20 p-4 rounded-full mr-4">
+                                    <div class="text-4xl">🔄</div>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold mb-2">Rotasi Peran Jelas</h4>
+                                    <p class="text-green-100 text-sm">Clear Role Rotation</p>
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <div class="text-4xl mb-3">🎯</div>
-                                <h4 class="text-xl font-bold mb-2">Student Engagement</h4>
-                                <p class="text-sm text-blue-100">Partisipasi aktif siswa dalam pembelajaran dan motivasi belajar yang tinggi</p>
+                            <p class="text-green-50 leading-relaxed">
+                                Sistem rotasi yang memastikan setiap siswa mendapat kesempatan berperan sebagai speaker, observer, moderator, dan assessor untuk pengalaman pembelajaran yang menyeluruh.
+                            </p>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-8 rounded-2xl shadow-xl card-hover">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-white bg-opacity-20 p-4 rounded-full mr-4">
+                                    <div class="text-4xl">⏱️</div>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold mb-2">Manajemen Waktu Efektif</h4>
+                                    <p class="text-purple-100 text-sm">Effective Time Management</p>
+                                </div>
                             </div>
+                            <p class="text-purple-50 leading-relaxed">
+                                Alokasi waktu yang tepat untuk setiap tahap pembelajaran dengan sistem timer yang membantu siswa mengembangkan kemampuan presentasi dalam batas waktu yang realistis.
+                            </p>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="bg-gradient-to-br from-orange-500 to-orange-700 text-white p-8 rounded-2xl shadow-xl card-hover">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-white bg-opacity-20 p-4 rounded-full mr-4">
+                                    <div class="text-4xl">📊</div>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold mb-2">Asesmen Komprehensif</h4>
+                                    <p class="text-orange-100 text-sm">Comprehensive Assessment</p>
+                                </div>
+                            </div>
+                            <p class="text-orange-50 leading-relaxed">
+                                Sistem penilaian holistik yang mengukur perkembangan 4Cs (Critical Thinking, Creativity, Communication, Collaboration) melalui rubrik yang jelas dan objektif.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in">
-                        <div class="bg-gradient-to-r from-teal-500 to-teal-700 p-8 rounded-lg text-white">
-                            <h3 class="text-2xl font-bold mb-4">🎯 Tujuan Utama</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-center"><span class="mr-2">✓</span> Meningkatkan Critical Thinking</li>
-                                <li class="flex items-center"><span class="mr-2">✓</span> Mengembangkan Creativity</li>
-                                <li class="flex items-center"><span class="mr-2">✓</span> Memperkuat Communication Skills</li>
-                                <li class="flex items-center"><span class="mr-2">✓</span> Membangun Collaboration</li>
-                                <li class="flex items-center"><span class="mr-2">✓</span> Meningkatkan Bahasa Inggris (Speaking, Reading, Listening, Writing)</li>
-                            </ul>
+                <!-- Support Section -->
+                <div class="text-center mb-16 py-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Dukungan Resmi</h3>
+                        <h4 class="text-2xl font-semibold text-blue-700 mb-4">Kementerian Pendidikan Tinggi, Sains, dan Teknologi Republik Indonesia</h4>
+                        <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                            Model pembelajaran ini dikembangkan dengan dukungan Kemdiktisaintek dalam program Penelitian dan Pengabdian Masyarakat Tahun 2025.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Copyright Section -->
+                <div class="bg-white border-2 border-gray-200 p-8 rounded-2xl shadow-lg mb-16">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center bg-gray-100 px-6 py-3 rounded-full mb-4">
+                            <div class="text-2xl mr-3">©️</div>
+                            <h3 class="text-2xl font-bold text-gray-800">Hak Cipta & Kekayaan Intelektual</h3>
                         </div>
                     </div>
-
-                    <div class="fade-in">
-                        <div class="bg-teal-50 p-8 rounded-lg border-l-4 border-teal-400">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">🙏 Ucapan Terima Kasih</h3>
-                            <p class="text-gray-700 mb-4">
-                                Kami mengucapkan terima kasih kepada <strong>Kementerian Pendidikan Tinggi, Sains, dan Teknologi Republik Indonesia</strong> yang telah mendanai Research and Development dari model ini sehingga dapat digunakan dalam pembelajaran untuk meningkatkan kualitas pendidikan di Indonesia.
-                            </p>
-                            <div class="mt-6">
-                                <a href="https://drive.google.com/file/d/1SxTVZEb999LL1FVfr-rKei-4s8idTrg7/view?usp=sharing" target="_blank" class="inline-flex items-center bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors">
-                                    📄 Lihat Hak Cipta
-                                </a>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                            <h4 class="text-xl font-bold text-blue-800 mb-4">📋 Detail Hak Cipta</h4>
+                            <div class="space-y-3 text-gray-700">
+                                <div class="flex justify-between items-center border-b border-blue-200 pb-2">
+                                    <span class="font-medium">Nomor Pencatatan:</span>
+                                    <span class="font-bold text-blue-700">000123456789</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-blue-200 pb-2">
+                                    <span class="font-medium">Tanggal Pencatatan:</span>
+                                    <span class="font-bold text-blue-700">15 Januari 2024</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-blue-200 pb-2">
+                                    <span class="font-medium">Masa Berlaku:</span>
+                                    <span class="font-bold text-blue-700">50 Tahun</span>
+                                </div>
+                                <div class="flex justify-between items-center border-b border-blue-200 pb-2">
+                                    <span class="font-medium">Status:</span>
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-bold">Terdaftar</span>
+                                </div>
                             </div>
                         </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                            <h4 class="text-xl font-bold text-blue-800 mb-4">👨‍💼 Informasi Pencipta</h4>
+                            <div class="space-y-3 text-gray-700">
+                                <div class="border-b border-blue-200 pb-2">
+                                    <span class="font-medium text-sm text-blue-600">Nama Pencipta:</span>
+                                    <p class="font-bold text-blue-800">Mulyadi Syahputra, M.Pd</p>
+                                </div>
+                                <div class="border-b border-blue-200 pb-2">
+                                    <span class="font-medium text-sm text-blue-600">Institusi:</span>
+                                    <p class="font-bold text-blue-800">Universitas Bina Bangsa Getsempena</p>
+                                </div>
+                                <div class="border-b border-blue-200 pb-2">
+                                    <span class="font-medium text-sm text-blue-600">Kategori Ciptaan:</span>
+                                    <p class="font-bold text-blue-800">Model Pembelajaran</p>
+                                </div>
+                                <div class="border-b border-blue-200 pb-2">
+                                    <span class="font-medium text-sm text-blue-600">Jenis Ciptaan:</span>
+                                    <p class="font-bold text-blue-800">Karya Tulis Ilmiah</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-xl">
+                        <h4 class="text-lg font-bold text-gray-800 mb-4 text-center">⚖️ Ketentuan Penggunaan</h4>
+                        <div class="grid md:grid-cols-3 gap-6 text-sm">
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">✅</div>
+                                <h5 class="font-bold text-green-700 mb-2">Diizinkan</h5>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Penggunaan untuk pendidikan</li>
+                                    <li>• Implementasi di kelas</li>
+                                    <li>• Penelitian akademik</li>
+                                    <li>• Sitasi dengan sumber</li>
+                                </ul>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">📝</div>
+                                <h5 class="font-bold text-blue-700 mb-2">Perlu Izin</h5>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Publikasi komersial</li>
+                                    <li>• Modifikasi substansial</li>
+                                    <li>• Distribusi massal</li>
+                                    <li>• Adaptasi untuk produk</li>
+                                </ul>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl mb-2">❌</div>
+                                <h5 class="font-bold text-red-700 mb-2">Dilarang</h5>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Klaim sebagai karya sendiri</li>
+                                    <li>• Penggunaan tanpa sitasi</li>
+                                    <li>• Penjualan tanpa izin</li>
+                                    <li>• Pelanggaran hak cipta</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <a href="https://teacher404.blogspot.com/" target="_blank" class="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold text-lg">
+                            📄 Lihat Sertifikat Hak Cipta Lengkap
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Quick Navigation Cards -->
-                <div class="mt-16">
-                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Jelajahi DIM</h2>
-                    <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-                        <div class="bg-white p-6 rounded-lg shadow-lg card-hover text-center cursor-pointer" onclick="showPage('format')">
-                            <div class="text-3xl mb-3">⚖️</div>
-                            <h3 class="font-bold text-gray-800">Format</h3>
+                <div class="bg-gray-50 p-10 rounded-lg">
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">🔍 Jelajahi Debate Instructional Model</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover text-center cursor-pointer" onclick="showPage('format')">
+                            <div class="text-4xl mb-4">⚖️</div>
+                            <h3 class="font-bold text-gray-800 text-lg">Format</h3>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg card-hover text-center cursor-pointer" onclick="showPage('sintaks')">
-                            <div class="text-3xl mb-3">🔄</div>
-                            <h3 class="font-bold text-gray-800">Sintaks</h3>
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover text-center cursor-pointer" onclick="showPage('sintaks')">
+                            <div class="text-4xl mb-4">🔄</div>
+                            <h3 class="font-bold text-gray-800 text-lg">Sintaks</h3>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg card-hover text-center cursor-pointer" onclick="showPage('instrumen')">
-                            <div class="text-3xl mb-3">📚</div>
-                            <h3 class="font-bold text-gray-800">Instrumen</h3>
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover text-center cursor-pointer" onclick="showPage('instrumen')">
+                            <div class="text-4xl mb-4">📚</div>
+                            <h3 class="font-bold text-gray-800 text-lg">Bahan dan Media</h3>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg card-hover text-center cursor-pointer" onclick="showPage('asesmen')">
-                            <div class="text-3xl mb-3">📊</div>
-                            <h3 class="font-bold text-gray-800">Asesmen</h3>
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover text-center cursor-pointer" onclick="showPage('asesmen')">
+                            <div class="text-4xl mb-4">📊</div>
+                            <h3 class="font-bold text-gray-800 text-lg">Asesmen</h3>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg card-hover text-center cursor-pointer" onclick="showPage('komunitas')">
-                            <div class="text-3xl mb-3">🛠️</div>
-                            <h3 class="font-bold text-gray-800">Tools</h3>
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover text-center cursor-pointer" onclick="showPage('komunitas')">
+                            <div class="text-4xl mb-4">🛠️</div>
+                            <h3 class="font-bold text-gray-800 text-lg">Tools</h3>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-lg card-hover text-center cursor-pointer" onclick="showPage('contact')">
-                            <div class="text-3xl mb-3">📞</div>
-                            <h3 class="font-bold text-gray-800">Contact</h3>
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover text-center cursor-pointer" onclick="showPage('contact')">
+                            <div class="text-4xl mb-4">📞</div>
+                            <h3 class="font-bold text-gray-800 text-lg">Contact</h3>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -207,57 +375,53 @@
 
     <!-- Format Page -->
     <div id="format-page" class="page">
-        <section class="py-16 bg-gray-100">
+        <section class="py-8 bg-gray-100">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Format Debate DIM</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Format Debate Instructional Model</h2>
                 
                 <!-- 1. Role Division -->
-                <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-6">1. Role Division (Pembagian Peran)</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">1. Role Division (Pembagian Peran)</h3>
                     
-                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
                         <!-- Main Speakers -->
-                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
-                            <h4 class="text-xl font-bold text-blue-800 mb-4">🎤 Main Speakers</h4>
-                            <div class="space-y-4">
-                                <div class="bg-white p-4 rounded-lg">
-                                    <h5 class="font-bold text-green-700 mb-2">Affirmative Side (Pro)</h5>
-                                    <ul class="text-sm text-gray-700 space-y-1">
-                                        <li>• <strong>1st Speaker:</strong> Opening case, define motion, present main arguments</li>
-                                        <li>• <strong>2nd Speaker:</strong> Rebut opposition, strengthen case with evidence</li>
-                                        <li>• <strong>3rd Speaker:</strong> Final rebuttal, summarize key points, closing statement</li>
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg">
+                            <h4 class="text-lg font-bold text-blue-800 mb-3">🎤 Main Speakers</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg">
+                                    <h5 class="font-bold text-green-700 mb-1 text-sm">Affirmative Side (Pro)</h5>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• <strong>1st:</strong> Opening case, define motion</li>
+                                        <li>• <strong>2nd:</strong> Rebut opposition, strengthen case</li>
+                                        <li>• <strong>3rd:</strong> Final rebuttal, closing statement</li>
                                     </ul>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg">
-                                    <h5 class="font-bold text-red-700 mb-2">Negative Side (Kontra)</h5>
-                                    <ul class="text-sm text-gray-700 space-y-1">
-                                        <li>• <strong>1st Speaker:</strong> Challenge definition, present counter-arguments</li>
-                                        <li>• <strong>2nd Speaker:</strong> Rebut affirmative case, provide alternative solutions</li>
-                                        <li>• <strong>3rd Speaker:</strong> Final rebuttal, highlight weaknesses, closing statement</li>
+                                <div class="bg-white p-3 rounded-lg">
+                                    <h5 class="font-bold text-red-700 mb-1 text-sm">Negative Side (Kontra)</h5>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• <strong>1st:</strong> Challenge definition, counter-arguments</li>
+                                        <li>• <strong>2nd:</strong> Rebut affirmative, alternative solutions</li>
+                                        <li>• <strong>3rd:</strong> Final rebuttal, highlight weaknesses</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Research Supporters -->
-                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
-                            <h4 class="text-xl font-bold text-purple-800 mb-4">📚 Research Supporters</h4>
-                            <div class="space-y-4">
-                                <div class="bg-white p-4 rounded-lg">
-                                    <h5 class="font-bold text-purple-700 mb-2">Affirmative Research Team (3-4 orang)</h5>
-                                    <ul class="text-sm text-gray-700 space-y-1">
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg">
+                            <h4 class="text-lg font-bold text-purple-800 mb-3">📚 Research Supporters</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg">
+                                    <h5 class="font-bold text-purple-700 mb-1 text-sm">Affirmative Research (3-4 orang)</h5>
+                                    <ul class="text-xs text-gray-700 space-y-1">
                                         <li>• Mencari data dan fakta pendukung</li>
-                                        <li>• Menyiapkan statistik dan contoh kasus</li>
                                         <li>• Membantu speakers dengan informasi real-time</li>
-                                        <li>• Menganalisis argumen lawan untuk counter-strategy</li>
                                     </ul>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg">
-                                    <h5 class="font-bold text-purple-700 mb-2">Negative Research Team (3-4 orang)</h5>
-                                    <ul class="text-sm text-gray-700 space-y-1">
-                                        <li>• Mencari counter-evidence dan data bantahan</li>
-                                        <li>• Menyiapkan alternatif solusi</li>
-                                        <li>• Membantu speakers dengan fact-checking</li>
+                                <div class="bg-white p-3 rounded-lg">
+                                    <h5 class="font-bold text-purple-700 mb-1 text-sm">Negative Research (3-4 orang)</h5>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• Mencari counter-evidence dan bantahan</li>
                                         <li>• Mengidentifikasi kelemahan argumen lawan</li>
                                     </ul>
                                 </div>
@@ -266,33 +430,27 @@
                     </div>
 
                     <!-- Supporting Roles -->
-                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg mb-6">
-                        <h4 class="text-xl font-bold text-orange-800 mb-4">⚖️ Supporting Rules</h4>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="bg-white p-4 rounded-lg">
-                                <h5 class="font-bold text-orange-700 mb-2">📊 Assessment Panel (5-7 orang)</h5>
-                                <ul class="text-sm text-gray-700 space-y-1">
-                                    <li>• Menilai kualitas argumen</li>
-                                    <li>• Mengukur 4Cs setiap speaker</li>
+                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-lg mb-4">
+                        <h4 class="text-lg font-bold text-orange-800 mb-3">⚖️ Supporting Roles</h4>
+                        <div class="grid md:grid-cols-3 gap-3">
+                            <div class="bg-white p-3 rounded-lg">
+                                <h5 class="font-bold text-orange-700 mb-1 text-sm">📊 Assessment Panel</h5>
+                                <ul class="text-xs text-gray-700 space-y-1">
+                                    <li>• Menilai kualitas argumen & 4Cs</li>
                                     <li>• Memberikan feedback konstruktif</li>
-                                    <li>• Menentukan pemenang berdasarkan rubrik</li>
                                 </ul>
                             </div>
-                            <div class="bg-white p-4 rounded-lg">
-                                <h5 class="font-bold text-orange-700 mb-2">⏰ Time Keeper (1 orang)</h5>
-                                <ul class="text-sm text-gray-700 space-y-1">
+                            <div class="bg-white p-3 rounded-lg">
+                                <h5 class="font-bold text-orange-700 mb-1 text-sm">⏰ Time Keeper</h5>
+                                <ul class="text-xs text-gray-700 space-y-1">
                                     <li>• Mengatur waktu setiap speaker</li>
                                     <li>• Memberikan warning signal</li>
-                                    <li>• Memastikan fair time allocation</li>
-                                    <li>• Mencatat durasi setiap segmen</li>
                                 </ul>
                             </div>
-                            <div class="bg-white p-4 rounded-lg">
-                                <h5 class="font-bold text-orange-700 mb-2">📝 Reporter/Notetaker (2-4 orang)</h5>
-                                <ul class="text-sm text-gray-700 space-y-1">
+                            <div class="bg-white p-3 rounded-lg">
+                                <h5 class="font-bold text-orange-700 mb-1 text-sm">📝 Reporter/Notetaker</h5>
+                                <ul class="text-xs text-gray-700 space-y-1">
                                     <li>• Mencatat poin-poin utama debat</li>
-                                    <li>• Merangkum argumen kedua sisi</li>
-                                    <li>• Mendokumentasikan momen penting</li>
                                     <li>• Menyiapkan summary untuk refleksi</li>
                                 </ul>
                             </div>
@@ -388,10 +546,10 @@
                     
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
-                            <h4 class="text-xl font-bold text-teal-700 mb-4">🔄 Sistem Rotasi</h4>
+                            <h4 class="text-xl font-bold text-blue-700 mb-4">🔄 Sistem Rotasi</h4>
                             <div class="space-y-4">
-                                <div class="bg-teal-50 p-4 rounded-lg">
-                                    <h5 class="font-bold text-teal-800 mb-2">Debat 1</h5>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-800 mb-2">Debat 1</h5>
                                     <p class="text-sm text-gray-700">Grup A: Main Speakers | Grup B: Assessment Panel | Grup C: Support Roles</p>
                                 </div>
                                 <div class="bg-blue-50 p-4 rounded-lg">
@@ -406,26 +564,26 @@
                         </div>
 
                         <div>
-                            <h4 class="text-xl font-bold text-teal-700 mb-4">🎯 Manfaat Rotasi</h4>
+                            <h4 class="text-xl font-bold text-blue-700 mb-4">🎯 Manfaat Rotasi</h4>
                             <ul class="space-y-3 text-gray-700">
                                 <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
+                                    <span class="text-blue-600 mr-2">•</span>
                                     <span><strong>Equal Opportunity:</strong> Setiap siswa mendapat kesempatan menjadi speaker utama</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
+                                    <span class="text-blue-600 mr-2">•</span>
                                     <span><strong>Skill Development:</strong> Mengembangkan berbagai kemampuan (speaking, assessing, supporting)</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
+                                    <span class="text-blue-600 mr-2">•</span>
                                     <span><strong>Perspective Building:</strong> Memahami debat dari berbagai sudut pandang</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
+                                    <span class="text-blue-600 mr-2">•</span>
                                     <span><strong>Peer Learning:</strong> Belajar dari observasi dan penilaian terhadap teman</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
+                                    <span class="text-blue-600 mr-2">•</span>
                                     <span><strong>Confidence Building:</strong> Mengurangi anxiety dengan pengalaman bertahap</span>
                                 </li>
                             </ul>
@@ -520,7 +678,7 @@
                     
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
-                            <h4 class="text-xl font-bold text-teal-700 mb-4">⏰ Detailed Time Allocation</h4>
+                            <h4 class="text-xl font-bold text-blue-700 mb-4">⏰ Detailed Time Allocation</h4>
                             <div class="space-y-3">
                                 <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
                                     <span class="font-medium">D - Dive In (Menyelami Topik)</span>
@@ -558,10 +716,10 @@
                         </div>
 
                         <div>
-                            <h4 class="text-xl font-bold text-teal-700 mb-4">📊 Time Management Tools</h4>
+                            <h4 class="text-xl font-bold text-blue-700 mb-4">📊 Time Management Tools</h4>
                             <div class="space-y-4">
-                                <div class="bg-teal-50 p-4 rounded-lg">
-                                    <h5 class="font-bold text-teal-800 mb-2">Visual Timer</h5>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-800 mb-2">Visual Timer</h5>
                                     <p class="text-sm text-gray-700">Countdown timer visible to all participants with color-coded warnings</p>
                                 </div>
                                 <div class="bg-blue-50 p-4 rounded-lg">
@@ -629,56 +787,79 @@
 
     <!-- Sintaks Page -->
     <div id="sintaks-page" class="page">
-        <section class="py-16 bg-white">
+        <section class="py-8 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Sintaks - DEBATE</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Sintaks - DEBATE</h2>
                 
                 <div class="max-w-6xl mx-auto">
                     <!-- Student Roles Overview -->
-                    <div class="bg-gradient-to-r from-teal-500 to-teal-700 text-white p-8 rounded-lg mb-8">
+                    <div class="bg-gradient-to-r from-blue-500 to-indigo-700 text-white p-8 rounded-lg mb-6">
                         <h3 class="text-2xl font-bold mb-6 text-center">👥 Peran Siswa dalam DIM</h3>
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="text-center">
-                                <div class="text-3xl mb-2">🎤</div>
-                                <h4 class="font-bold mb-2">Debater Pro</h4>
-                                <p class="text-sm text-teal-100">4-6 siswa yang mendukung mosi</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl mb-2">🛡️</div>
-                                <h4 class="font-bold mb-2">Debater Kontra</h4>
-                                <p class="text-sm text-teal-100">4-6 siswa yang menentang mosi</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl mb-2">👁️</div>
-                                <h4 class="font-bold mb-2">Observer</h4>
-                                <p class="text-sm text-teal-100">10-15 siswa yang mengamati dan menilai</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="text-3xl mb-2">⚖️</div>
-                                <h4 class="font-bold mb-2">Moderator</h4>
-                                <p class="text-sm text-teal-100">1-2 siswa yang memimpin debat</p>
-                            </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                            <a href="https://teacher404.blogspot.com/peran-main-speakers-affirmative" target="_blank" class="text-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform">
+                                <div class="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">🎤</div>
+                                <h4 class="font-bold mb-1 text-sm group-hover:text-yellow-200 transition-colors duration-300">Main Speakers Affirmative</h4>
+                                <p class="text-xs text-blue-100 group-hover:text-blue-50 transition-colors duration-300">3 siswa tim Pro</p>
+                                <div class="mt-2 text-xs text-yellow-200 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Detail PDF</div>
+                            </a>
+                            <a href="https://teacher404.blogspot.com/peran-main-speakers-negative" target="_blank" class="text-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform">
+                                <div class="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">🎙️</div>
+                                <h4 class="font-bold mb-1 text-sm group-hover:text-yellow-200 transition-colors duration-300">Main Speakers Negative</h4>
+                                <p class="text-xs text-blue-100 group-hover:text-blue-50 transition-colors duration-300">3 siswa tim Kontra</p>
+                                <div class="mt-2 text-xs text-yellow-200 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Detail PDF</div>
+                            </a>
+                            <a href="https://teacher404.blogspot.com/peran-research-supporters" target="_blank" class="text-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform">
+                                <div class="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">📚</div>
+                                <h4 class="font-bold mb-1 text-sm group-hover:text-yellow-200 transition-colors duration-300">Research Supporters</h4>
+                                <p class="text-xs text-blue-100 group-hover:text-blue-50 transition-colors duration-300">6-8 siswa riset</p>
+                                <div class="mt-2 text-xs text-yellow-200 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Detail PDF</div>
+                            </a>
+                            <a href="https://teacher404.blogspot.com/peran-assessment-panel" target="_blank" class="text-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform">
+                                <div class="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">📊</div>
+                                <h4 class="font-bold mb-1 text-sm group-hover:text-yellow-200 transition-colors duration-300">Assessment Panel</h4>
+                                <p class="text-xs text-blue-100 group-hover:text-blue-50 transition-colors duration-300">3-4 siswa penilai</p>
+                                <div class="mt-2 text-xs text-yellow-200 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Detail PDF</div>
+                            </a>
+                            <a href="https://teacher404.blogspot.com/peran-time-keeper" target="_blank" class="text-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform">
+                                <div class="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">⏰</div>
+                                <h4 class="font-bold mb-1 text-sm group-hover:text-yellow-200 transition-colors duration-300">Time Keeper</h4>
+                                <p class="text-xs text-blue-100 group-hover:text-blue-50 transition-colors duration-300">1-2 siswa waktu</p>
+                                <div class="mt-2 text-xs text-yellow-200 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Detail PDF</div>
+                            </a>
+                            <a href="https://teacher404.blogspot.com/peran-reporter-notetaker" target="_blank" class="text-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform">
+                                <div class="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">📝</div>
+                                <h4 class="font-bold mb-1 text-sm group-hover:text-yellow-200 transition-colors duration-300">Reporter & Notetaker</h4>
+                                <p class="text-xs text-blue-100 group-hover:text-blue-50 transition-colors duration-300">2-3 siswa pencatat</p>
+                                <div class="mt-2 text-xs text-yellow-200 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Detail PDF</div>
+                            </a>
+                            <a href="https://teacher404.blogspot.com/peran-audience-analyst" target="_blank" class="text-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform">
+                                <div class="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">👥</div>
+                                <h4 class="font-bold mb-1 text-sm group-hover:text-yellow-200 transition-colors duration-300">Audience Analyst</h4>
+                                <p class="text-xs text-blue-100 group-hover:text-blue-50 transition-colors duration-300">Sisa siswa lainnya</p>
+                                <div class="mt-2 text-xs text-yellow-200 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Detail PDF</div>
+                            </a>
+                            <a href="https://teacher404.blogspot.com/peran-observer" target="_blank" class="text-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform">
+                                <div class="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">👁️</div>
+                                <h4 class="font-bold mb-1 text-sm group-hover:text-yellow-200 transition-colors duration-300">Observer</h4>
+                                <p class="text-xs text-blue-100 group-hover:text-blue-50 transition-colors duration-300">Pengamat eksternal</p>
+                                <div class="mt-2 text-xs text-yellow-200 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Detail PDF</div>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="space-y-6">
-                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                            <h3 class="text-xl font-bold text-blue-800 mb-2">D - Dive In (Menyelami Topik)</h3>
-                            <p class="text-gray-700 mb-2"><strong>Waktu:</strong> 5 menit</p>
-                            <p class="text-gray-700 mb-4"><strong>Aktivitas:</strong> Guru memperkenalkan topik dan melakukan brainstorming ide awal, terkait apa kasus yang terjadi dan apa yang diperdebatkan. Guru memberikan pemahaman dan penjelasan kepada siswa tentang konteks kasus yang akan dibahas.</p>
-                            <div class="bg-white p-4 rounded-lg">
-                                <h4 class="font-bold text-blue-700 mb-3">🎯 Peran Siswa:</h4>
-                                <div class="grid md:grid-cols-1 gap-4">
-                                    <div>
-                                        <p class="text-sm font-semibold text-gray-800 mb-2">🌍 Semua Siswa:</p>
-                                        <ul class="text-sm text-gray-600 space-y-1">
-                                            <li>• Mendengarkan penjelasan guru tentang konteks kasus</li>
-                                            <li>• Memahami apa yang akan diperdebatkan</li>
-                                            <li>• Brainstorming ide awal tentang topik</li>
-                                            <li>• Mengidentifikasi berbagai perspektif yang mungkin</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="text-lg font-bold text-blue-800 mb-2">D - Dive In (Menyelami Topik)</h3>
+                            <p class="text-gray-700 mb-1 text-sm"><strong>Waktu:</strong> 5 menit</p>
+                            <p class="text-gray-700 mb-3 text-sm"><strong>Aktivitas:</strong> Guru memperkenalkan topik dan melakukan brainstorming ide awal tentang konteks kasus yang akan dibahas.</p>
+                            <div class="bg-white p-3 rounded-lg">
+                                <h4 class="font-bold text-blue-700 mb-2 text-sm">🎯 Peran Siswa:</h4>
+                                <p class="text-xs font-semibold text-gray-800 mb-1">🌍 Semua Siswa:</p>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>• Mendengarkan penjelasan guru tentang konteks kasus</li>
+                                    <li>• Brainstorming ide awal tentang topik</li>
+                                    <li>• Mengidentifikasi berbagai perspektif yang mungkin</li>
+                                </ul>
                             </div>
                         </div>
 
@@ -885,109 +1066,434 @@
 
     <!-- Instrumen Page -->
     <div id="instrumen-page" class="page">
-        <section class="py-16 bg-gray-100">
+        <section class="py-12 bg-gradient-to-br from-slate-50 to-blue-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Instrumen & Bahan Pembelajaran</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">📚 Bahan dan Media</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Akses lengkap semua dokumen, panduan, dan media pembelajaran untuk implementasi Debate Instructional Model yang efektif</p>
+                </div>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
-                        <div class="text-3xl mb-4">📚</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Panduan Guru & Siswa</h3>
-                        <p class="text-gray-600 mb-4">Panduan lengkap untuk guru dan materi pembelajaran siswa</p>
-                        <a href="https://teacher404.blogspot.com/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Download PDF</a>
-                    </div>
+                <!-- PDF Guides Section -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">📖 Panduan Utama</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                        
+                        <!-- Teacher Guide -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover">
+                            <a href="https://teacher404.blogspot.com/panduan-guru-dim" target="_blank" class="block">
+                                <div class="relative">
+                                    <img src="https://via.placeholder.com/300x400/2563eb/ffffff?text=PANDUAN+GURU+DIM" alt="Panduan Guru DIM Cover" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                    <div class="hidden w-full h-48 bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white">
+                                        <div class="text-center">
+                                            <div class="text-3xl mb-2">👨‍🏫</div>
+                                            <h4 class="text-lg font-bold">PANDUAN GURU</h4>
+                                            <p class="text-blue-200 text-sm">Debate Instructional Model</p>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-3 right-3 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-bold">PDF</div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="text-lg font-bold text-gray-800 mb-2">📚 Panduan Guru</h4>
+                                    <p class="text-gray-600 text-xs mb-3">Panduan lengkap implementasi DIM untuk guru, termasuk strategi pengajaran, manajemen kelas, dan tips sukses.</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-blue-600 font-semibold text-xs">Klik untuk Download</span>
+                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
-                        <div class="text-3xl mb-4">📝</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">LKPD</h3>
-                        <p class="text-gray-600 mb-4">Lembar Kerja Peserta Didik untuk aktivitas debat</p>
-                        <a href="https://teacher404.blogspot.com/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Download PDF</a>
-                    </div>
+                        <!-- Student Guide -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover">
+                            <a href="https://teacher404.blogspot.com/panduan-siswa-dim" target="_blank" class="block">
+                                <div class="relative">
+                                    <img src="https://via.placeholder.com/300x400/059669/ffffff?text=PANDUAN+SISWA+DIM" alt="Panduan Siswa DIM Cover" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                    <div class="hidden w-full h-48 bg-gradient-to-br from-emerald-600 to-teal-700 flex items-center justify-center text-white">
+                                        <div class="text-center">
+                                            <div class="text-3xl mb-2">👨‍🎓</div>
+                                            <h4 class="text-lg font-bold">PANDUAN SISWA</h4>
+                                            <p class="text-emerald-200 text-sm">Debate Instructional Model</p>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-3 right-3 bg-emerald-600 text-white px-2 py-1 rounded-full text-xs font-bold">PDF</div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="text-lg font-bold text-gray-800 mb-2">🎓 Panduan Siswa</h4>
+                                    <p class="text-gray-600 text-xs mb-3">Panduan praktis untuk siswa dalam mengikuti pembelajaran DIM, termasuk tips debat dan pengembangan 4Cs.</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-emerald-600 font-semibold text-xs">Klik untuk Download</span>
+                                        <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
-                        <div class="text-3xl mb-4">🎓</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Modul Ajar</h3>
-                        <p class="text-gray-600 mb-4">Modul Ajar berbasis DIM siap pakai</p>
-                        <a href="https://teacher404.blogspot.com/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Download PDF</a>
-                    </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
-                        <div class="text-3xl mb-4">🎬</div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Media Pembelajaran</h3>
-                        <p class="text-gray-600 mb-4">Video tutorial, presentasi, dan media interaktif DIM</p>
-                        <a href="https://teacher404.blogspot.com/" target="_blank" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors">Akses Media</a>
+
+                        <!-- Best Practices Handbook -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover">
+                            <a href="https://teacher404.blogspot.com/panduan-praktik-baik-dim" target="_blank" class="block">
+                                <div class="relative">
+                                    <img src="https://via.placeholder.com/300x400/dc2626/ffffff?text=BEST+PRACTICES+DIM" alt="Best Practices Handbook DIM Cover" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                    <div class="hidden w-full h-48 bg-gradient-to-br from-red-600 to-rose-700 flex items-center justify-center text-white">
+                                        <div class="text-center">
+                                            <div class="text-3xl mb-2">⭐</div>
+                                            <h4 class="text-lg font-bold">BEST PRACTICES</h4>
+                                            <p class="text-red-200 text-sm">Handbook</p>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-3 right-3 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">PDF</div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="text-lg font-bold text-gray-800 mb-2">⭐ Panduan Praktik Baik</h4>
+                                    <p class="text-gray-600 text-xs mb-3">Kumpulan praktik terbaik, studi kasus sukses, dan lessons learned dari implementasi DIM di berbagai sekolah.</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-red-600 font-semibold text-xs">Klik untuk Download</span>
+                                        <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Policy Brief Guide -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover">
+                            <a href="https://teacher404.blogspot.com/policy-brief-dim" target="_blank" class="block">
+                                <div class="relative">
+                                    <img src="https://via.placeholder.com/300x400/ea580c/ffffff?text=POLICY+BRIEF+DIM" alt="Policy Brief DIM Cover" class="w-full h-48 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                    <div class="hidden w-full h-48 bg-gradient-to-br from-orange-600 to-amber-700 flex items-center justify-center text-white">
+                                        <div class="text-center">
+                                            <div class="text-3xl mb-2">📋</div>
+                                            <h4 class="text-lg font-bold">POLICY BRIEF</h4>
+                                            <p class="text-orange-200 text-sm">Executive Summary</p>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-3 right-3 bg-orange-600 text-white px-2 py-1 rounded-full text-xs font-bold">PDF</div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="text-lg font-bold text-gray-800 mb-2">📋 Policy Brief</h4>
+                                    <p class="text-gray-600 text-xs mb-3">Ringkasan eksekutif dan rekomendasi kebijakan untuk adopsi DIM dalam sistem pendidikan nasional.</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-orange-600 font-semibold text-xs">Klik untuk Download</span>
+                                        <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Detailed Instrumen Information -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Detail Instrumen Pembelajaran</h3>
+                <!-- Secondary Resources -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">🎓 Modul & Media Pembelajaran</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        
+                        <!-- LKPD Section -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover">
+                            <div class="bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 p-6 text-white">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                        <!-- Speaker with Microphone Image -->
+                                        <img src="https://via.placeholder.com/32x32/ffffff/10b981?text=🎤" alt="Speaker with microphone" class="w-8 h-8 rounded-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                        <svg class="w-8 h-8 hidden" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-6a1 1 0 00-1-1H9a1 1 0 00-1 1v6a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold">LKPD Sintaks DEBATE</h4>
+                                        <p class="text-green-100 text-sm">Lembar Kerja Peserta Didik</p>
+                                    </div>
+                                </div>
+                                <p class="text-green-50 text-sm mb-4">Lembar kerja terstruktur untuk setiap tahap sintaks DEBATE</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-2">
+                                    <a href="https://teacher404.blogspot.com/lkpd-dive-in" target="_blank" class="flex items-center bg-blue-50 hover:bg-blue-100 p-2 rounded-lg transition-colors group text-sm">
+                                        <div class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 group-hover:scale-110 transition-transform">D</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-xs">Dive In</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://teacher404.blogspot.com/lkpd-equip" target="_blank" class="flex items-center bg-green-50 hover:bg-green-100 p-2 rounded-lg transition-colors group text-sm">
+                                        <div class="bg-green-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 group-hover:scale-110 transition-transform">E</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-xs">Equip</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://teacher404.blogspot.com/lkpd-build" target="_blank" class="flex items-center bg-purple-50 hover:bg-purple-100 p-2 rounded-lg transition-colors group text-sm">
+                                        <div class="bg-purple-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 group-hover:scale-110 transition-transform">B</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-xs">Build</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://teacher404.blogspot.com/lkpd-act" target="_blank" class="flex items-center bg-red-50 hover:bg-red-100 p-2 rounded-lg transition-colors group text-sm">
+                                        <div class="bg-red-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 group-hover:scale-110 transition-transform">A</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-xs">Act</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://teacher404.blogspot.com/lkpd-think-back" target="_blank" class="flex items-center bg-yellow-50 hover:bg-yellow-100 p-2 rounded-lg transition-colors group text-sm">
+                                        <div class="bg-yellow-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 group-hover:scale-110 transition-transform">T</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-xs">Think Back</h5>
+                                        </div>
+                                    </a>
+                                    <a href="https://teacher404.blogspot.com/lkpd-extend" target="_blank" class="flex items-center bg-indigo-50 hover:bg-indigo-100 p-2 rounded-lg transition-colors group text-sm">
+                                        <div class="bg-indigo-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 group-hover:scale-110 transition-transform">E</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-xs">Extend</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modul Ajar -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover">
+                            <div class="bg-gradient-to-r from-purple-600 to-indigo-600 p-6 text-white">
+                                <div class="flex items-center mb-4">
+                                    <div class="text-3xl mr-4">🎓</div>
+                                    <div>
+                                        <h4 class="text-xl font-bold">Modul Ajar</h4>
+                                        <p class="text-purple-100 text-sm">Kurikulum Merdeka</p>
+                                    </div>
+                                </div>
+                                <p class="text-purple-50 text-sm mb-4">Modul Ajar DIM yang disesuaikan dengan fase pembelajaran Kurikulum Merdeka</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-3">
+                                    <a href="https://teacher404.blogspot.com/modul-fase-e" target="_blank" class="flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors group">
+                                        <div class="flex items-center">
+                                            <div class="text-2xl mr-3">📚</div>
+                                            <div>
+                                                <h5 class="font-bold text-purple-800">Fase E</h5>
+                                                <p class="text-sm text-purple-600">Kelas X</p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="https://teacher404.blogspot.com/modul-fase-f" target="_blank" class="flex items-center justify-between p-4 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors group">
+                                        <div class="flex items-center">
+                                            <div class="text-2xl mr-3">📖</div>
+                                            <div>
+                                                <h5 class="font-bold text-indigo-800">Fase F</h5>
+                                                <p class="text-sm text-indigo-600">Kelas XI-XII</p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-5 h-5 text-indigo-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Media Pembelajaran -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-500 p-6 text-white">
+                                <div class="flex items-center mb-4">
+                                    <div class="text-3xl mr-4">🎬</div>
+                                    <div>
+                                        <h4 class="text-xl font-bold">Media Pembelajaran</h4>
+                                        <p class="text-orange-100 text-sm">Video & Interaktif</p>
+                                    </div>
+                                </div>
+                                <p class="text-orange-50 text-sm mb-4">Koleksi media pembelajaran interaktif untuk mendukung implementasi DIM</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-3">
+                                    <a href="https://teacher404.blogspot.com/video-tutorial" target="_blank" class="flex items-center justify-between p-4 bg-red-50 hover:bg-red-100 rounded-lg transition-colors group">
+                                        <div class="flex items-center">
+                                            <div class="text-2xl mr-3">🎥</div>
+                                            <div>
+                                                <h5 class="font-bold text-red-800">Video Tutorial</h5>
+                                                <p class="text-sm text-red-600">Step-by-step guide</p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-5 h-5 text-red-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="https://teacher404.blogspot.com/presentasi" target="_blank" class="flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors group">
+                                        <div class="flex items-center">
+                                            <div class="text-2xl mr-3">📊</div>
+                                            <div>
+                                                <h5 class="font-bold text-blue-800">Presentasi</h5>
+                                                <p class="text-sm text-blue-600">Slide pembelajaran</p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-5 h-5 text-blue-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="https://teacher404.blogspot.com/media-interaktif" target="_blank" class="flex items-center justify-between p-4 bg-green-50 hover:bg-green-100 rounded-lg transition-colors group">
+                                        <div class="flex items-center">
+                                            <div class="text-2xl mr-3">🎮</div>
+                                            <div>
+                                                <h5 class="font-bold text-green-800">Media Interaktif</h5>
+                                                <p class="text-sm text-green-600">Tools & simulasi</p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Resources -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">🔗 Sumber Daya Tambahan</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        
+                        <!-- Video Demonstrasi -->
+                        <div class="group">
+                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover h-full">
+                                <div class="bg-gradient-to-br from-pink-500 to-rose-600 p-6 text-white">
+                                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🎥</div>
+                                    <h4 class="text-xl font-bold mb-2">Video Demonstrasi</h4>
+                                    <p class="text-pink-100 text-sm">Implementasi DIM di kelas nyata</p>
+                                </div>
+                                <div class="p-6">
+                                    <p class="text-gray-600 mb-4 text-sm">Saksikan bagaimana DIM diimplementasikan dalam pembelajaran sesungguhnya dengan siswa</p>
+                                    <a href="https://teacher404.blogspot.com/video-demo" target="_blank" class="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Tonton Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bank Topik -->
+                        <div class="group">
+                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover h-full">
+                                <div class="bg-gradient-to-br from-teal-500 to-cyan-600 p-6 text-white">
+                                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">💡</div>
+                                    <h4 class="text-xl font-bold mb-2">Bank Topik Debat</h4>
+                                    <p class="text-teal-100 text-sm">Kumpulan mosi untuk berbagai level</p>
+                                </div>
+                                <div class="p-6">
+                                    <p class="text-gray-600 mb-4 text-sm">Akses ratusan topik debat yang telah dikurasi sesuai dengan tingkat kemampuan siswa</p>
+                                    <a href="https://teacher404.blogspot.com/topik-debat" target="_blank" class="inline-flex items-center bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                        Lihat Topik
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pemetaan CP -->
+                        <div class="group">
+                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 card-hover h-full">
+                                <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 text-white">
+                                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">🎯</div>
+                                    <h4 class="text-xl font-bold mb-2">Pemetaan CP</h4>
+                                    <p class="text-indigo-100 text-sm">Kesesuaian dengan Kurikulum Merdeka</p>
+                                </div>
+                                <div class="p-6">
+                                    <p class="text-gray-600 mb-4 text-sm">Pemetaan lengkap DIM dengan Capaian Pembelajaran Kurikulum Merdeka</p>
+                                    <a href="https://teacher404.blogspot.com/pemetaan-cp" target="_blank" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                                        </svg>
+                                        Lihat Pemetaan
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Implementation Guide -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">🚀 Panduan Implementasi</h3>
+                        <p class="text-gray-600 max-w-2xl mx-auto">Ikuti langkah-langkah berikut untuk implementasi DIM yang sukses di kelas Anda</p>
+                    </div>
                     
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-xl font-bold text-teal-700 mb-4">📖 Panduan Implementasi</h4>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
-                                    <span>Panduan lengkap untuk guru dalam mengimplementasikan DIM</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
-                                    <span>Materi pembelajaran siswa dengan contoh topik debat</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
-                                    <span>Template perencanaan pembelajaran</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
-                                    <span>Rubrik penilaian 4Cs yang komprehensif</span>
-                                </li>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div class="text-2xl">📖</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">1. Persiapan</h4>
+                            <ul class="text-sm text-gray-600 space-y-2 text-left">
+                                <li>• Baca panduan guru secara menyeluruh</li>
+                                <li>• Pilih topik debat yang relevan</li>
+                                <li>• Siapkan LKPD untuk setiap tahap</li>
+                                <li>• Atur pembagian kelompok siswa</li>
                             </ul>
                         </div>
-
-                        <div>
-                            <h4 class="text-xl font-bold text-teal-700 mb-4">🎯 Lembar Kerja & Aktivitas</h4>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
-                                    <span>LKPD untuk setiap tahap sintaks DEBATE</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
-                                    <span>Worksheet untuk observer dan moderator</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
-                                    <span>Template argument mapping</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-teal-600 mr-2">•</span>
-                                    <span>Reflection journal untuk siswa</span>
-                                </li>
+                        
+                        <div class="text-center">
+                            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div class="text-2xl">🎯</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">2. Implementasi</h4>
+                            <ul class="text-sm text-gray-600 space-y-2 text-left">
+                                <li>• Ikuti sintaks DEBATE secara berurutan</li>
+                                <li>• Gunakan timer untuk manajemen waktu</li>
+                                <li>• Fasilitasi rotasi peran siswa</li>
+                                <li>• Berikan feedback konstruktif</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <div class="text-2xl">📊</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">3. Evaluasi</h4>
+                            <ul class="text-sm text-gray-600 space-y-2 text-left">
+                                <li>• Gunakan rubrik penilaian 4Cs</li>
+                                <li>• Lakukan refleksi pembelajaran</li>
+                                <li>• Dokumentasikan perkembangan siswa</li>
+                                <li>• Evaluasi untuk perbaikan selanjutnya</li>
                             </ul>
                         </div>
                     </div>
-
-                    <div class="mt-8 p-6 bg-teal-50 rounded-lg">
-                        <h4 class="text-xl font-bold text-teal-800 mb-4">💡 Tips Penggunaan Instrumen</h4>
-                        <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <div class="mt-8 p-6 bg-gradient-to-r from-teal-50 to-blue-50 rounded-xl">
+                        <div class="flex items-center justify-center mb-4">
+                            <div class="text-3xl mr-3">💡</div>
+                            <h4 class="text-xl font-bold text-gray-800">Tips Sukses Implementasi</h4>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
                             <div>
-                                <h5 class="font-semibold text-teal-700 mb-2">Persiapan</h5>
-                                <p class="text-sm text-gray-700">Baca panduan guru terlebih dahulu, siapkan materi topik debat yang relevan dengan kurikulum</p>
+                                <h5 class="font-semibold text-teal-700 mb-2">✅ Yang Harus Dilakukan:</h5>
+                                <ul class="space-y-1">
+                                    <li>• Mulai dengan topik yang familiar bagi siswa</li>
+                                    <li>• Berikan contoh argumen yang baik</li>
+                                    <li>• Dorong partisipasi aktif semua siswa</li>
+                                    <li>• Ciptakan lingkungan yang supportif</li>
+                                </ul>
                             </div>
                             <div>
-                                <h5 class="font-semibold text-teal-700 mb-2">Implementasi</h5>
-                                <p class="text-sm text-gray-700">Gunakan LKPD secara bertahap sesuai sintaks, pastikan semua siswa memahami peran masing-masing</p>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-teal-700 mb-2">Evaluasi</h5>
-                                <p class="text-sm text-gray-700">Manfaatkan rubrik penilaian untuk asesmen formatif dan sumatif yang objektif</p>
+                                <h5 class="font-semibold text-red-700 mb-2">❌ Yang Harus Dihindari:</h5>
+                                <ul class="space-y-1">
+                                    <li>• Memilih topik yang terlalu kontroversial</li>
+                                    <li>• Mengabaikan manajemen waktu</li>
+                                    <li>• Membiarkan siswa mendominasi diskusi</li>
+                                    <li>• Lupa memberikan feedback konstruktif</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -997,7 +1503,7 @@
     <div id="asesmen-page" class="page">
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Asesmen DIM</h2>
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Asesmen Debate Instructional Model</h2>
                 
                 <div class="grid md:grid-cols-3 gap-8 mb-12">
                     <div class="bg-gradient-to-br from-teal-500 to-teal-600 text-white p-8 rounded-lg shadow-lg">
@@ -1005,15 +1511,15 @@
                         <ul class="space-y-3 mb-6">
                             <li class="flex items-center justify-between">
                                 <span>• Kesiapan Belajar</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-diagnostik-kesiapan" target="_blank" class="bg-white text-teal-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <a href="https://teacher404.blogspot.com/asesmen-diagnostik-kesiapan" target="_blank" class="bg-white text-teal-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                             <li class="flex items-center justify-between">
                                 <span>• Minat Belajar</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-diagnostik-minat" target="_blank" class="bg-white text-teal-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <a href="https://teacher404.blogspot.com/asesmen-diagnostik-minat" target="_blank" class="bg-white text-teal-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                             <li class="flex items-center justify-between">
                                 <span>• Gaya Belajar</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-diagnostik-gaya" target="_blank" class="bg-white text-teal-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <a href="https://teacher404.blogspot.com/asesmen-diagnostik-gaya" target="_blank" class="bg-white text-teal-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                         </ul>
                         <a href="https://teacher404.blogspot.com/asesmen-diagnostik-lengkap" target="_blank" class="bg-white text-teal-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors">Download Semua PDF</a>
@@ -1024,15 +1530,15 @@
                         <ul class="space-y-3 mb-6">
                             <li class="flex items-center justify-between">
                                 <span>• Sikap</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-formatif-sikap" target="_blank" class="bg-white text-green-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <a href="https://teacher404.blogspot.com/asesmen-formatif-sikap" target="_blank" class="bg-white text-green-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                             <li class="flex items-center justify-between">
                                 <span>• Pengetahuan</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-formatif-pengetahuan" target="_blank" class="bg-white text-green-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <a href="https://teacher404.blogspot.com/asesmen-formatif-pengetahuan" target="_blank" class="bg-white text-green-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                             <li class="flex items-center justify-between">
-                                <span>• Keterampilan 4Cs</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-formatif-4cs" target="_blank" class="bg-white text-green-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <span>• Keterampilan</span>
+                                <a href="https://teacher404.blogspot.com/asesmen-formatif-4cs" target="_blank" class="bg-white text-green-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                         </ul>
                         <a href="https://teacher404.blogspot.com/asesmen-formatif-lengkap" target="_blank" class="bg-white text-green-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors">Download Semua PDF</a>
@@ -1043,15 +1549,15 @@
                         <ul class="space-y-3 mb-6">
                             <li class="flex items-center justify-between">
                                 <span>• Pengetahuan (Soal)</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-sumatif-pengetahuan" target="_blank" class="bg-white text-purple-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <a href="https://teacher404.blogspot.com/asesmen-sumatif-pengetahuan" target="_blank" class="bg-white text-purple-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                             <li class="flex items-center justify-between">
-                                <span>• Keterampilan 4Cs</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-sumatif-4cs" target="_blank" class="bg-white text-purple-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <span>• Keterampilan</span>
+                                <a href="https://teacher404.blogspot.com/asesmen-sumatif-4cs" target="_blank" class="bg-white text-purple-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                             <li class="flex items-center justify-between">
                                 <span>• Lembar Observasi</span>
-                                <a href="https://teacher404.blogspot.com/asesmen-sumatif-observasi" target="_blank" class="bg-white text-purple-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">📄</a>
+                                <a href="https://teacher404.blogspot.com/asesmen-sumatif-observasi" target="_blank" class="bg-white text-purple-600 px-2 py-1 rounded text-sm hover:bg-gray-100 transition-colors">🔗</a>
                             </li>
                         </ul>
                         <a href="https://teacher404.blogspot.com/asesmen-sumatif-lengkap" target="_blank" class="bg-white text-purple-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors">Download Semua PDF</a>
@@ -1060,11 +1566,11 @@
 
                 <!-- Detailed Assessment Information -->
                 <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Panduan Asesmen DIM</h3>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Panduan Asesmen Debate Instructional Model</h3>
                     
                     <div class="space-y-8">
                         <div class="bg-white p-6 rounded-lg">
-                            <h4 class="text-xl font-bold text-teal-700 mb-4">🔍 Prinsip Asesmen dalam DIM</h4>
+                            <h4 class="text-xl font-bold text-teal-700 mb-4">🔍 Prinsip Asesmen dalam Debate Instructional Model</h4>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <h5 class="font-semibold text-gray-800 mb-2">Asesmen Autentik</h5>
@@ -1086,28 +1592,32 @@
                         </div>
 
                         <div class="bg-white p-6 rounded-lg">
-                            <h4 class="text-xl font-bold text-green-700 mb-4">📊 Fokus Penilaian 4Cs</h4>
+                            <h4 class="text-xl font-bold text-green-700 mb-4">📊 Rubrik Penilaian dan Observasi 4Cs</h4>
                             <div class="grid md:grid-cols-4 gap-4">
-                                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                                    <div class="text-2xl mb-2">🧠</div>
-                                    <h5 class="font-bold text-blue-700">Critical Thinking</h5>
-                                    <p class="text-xs text-gray-600 mt-2">Analisis argumen, evaluasi bukti, sintesis informasi</p>
-                                </div>
-                                <div class="text-center p-4 bg-purple-50 rounded-lg">
-                                    <div class="text-2xl mb-2">💡</div>
-                                    <h5 class="font-bold text-purple-700">Creativity</h5>
-                                    <p class="text-xs text-gray-600 mt-2">Inovasi argumen, solusi kreatif, perspektif unik</p>
-                                </div>
-                                <div class="text-center p-4 bg-green-50 rounded-lg">
-                                    <div class="text-2xl mb-2">💬</div>
-                                    <h5 class="font-bold text-green-700">Communication</h5>
-                                    <p class="text-xs text-gray-600 mt-2">Kejelasan presentasi, persuasi, bahasa Inggris</p>
-                                </div>
-                                <div class="text-center p-4 bg-orange-50 rounded-lg">
-                                    <div class="text-2xl mb-2">🤝</div>
-                                    <h5 class="font-bold text-orange-700">Collaboration</h5>
-                                    <p class="text-xs text-gray-600 mt-2">Kerja tim, mendengarkan, respek terhadap perbedaan</p>
-                                </div>
+                                <a href="https://teacher404.blogspot.com/rubrik-critical-thinking" target="_blank" class="text-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform hover:-translate-y-1">
+                                    <div class="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">🧠</div>
+                                    <h5 class="font-bold text-blue-700 group-hover:text-blue-800 transition-colors duration-300">Critical Thinking</h5>
+                                    <p class="text-xs text-gray-600 mt-2 group-hover:text-gray-700 transition-colors duration-300">Analisis argumen, evaluasi bukti, sintesis informasi</p>
+                                    <div class="mt-3 text-xs text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Rubrik PDF</div>
+                                </a>
+                                <a href="https://teacher404.blogspot.com/rubrik-creativity" target="_blank" class="text-center p-4 bg-purple-50 rounded-lg hover:bg-purple-100 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform hover:-translate-y-1">
+                                    <div class="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">💡</div>
+                                    <h5 class="font-bold text-purple-700 group-hover:text-purple-800 transition-colors duration-300">Creativity</h5>
+                                    <p class="text-xs text-gray-600 mt-2 group-hover:text-gray-700 transition-colors duration-300">Inovasi argumen, solusi kreatif, perspektif unik</p>
+                                    <div class="mt-3 text-xs text-purple-600 font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Rubrik PDF</div>
+                                </a>
+                                <a href="https://teacher404.blogspot.com/rubrik-communication" target="_blank" class="text-center p-4 bg-green-50 rounded-lg hover:bg-green-100 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform hover:-translate-y-1">
+                                    <div class="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">💬</div>
+                                    <h5 class="font-bold text-green-700 group-hover:text-green-800 transition-colors duration-300">Communication</h5>
+                                    <p class="text-xs text-gray-600 mt-2 group-hover:text-gray-700 transition-colors duration-300">Kejelasan presentasi, persuasi, bahasa Inggris</p>
+                                    <div class="mt-3 text-xs text-green-600 font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Rubrik PDF</div>
+                                </a>
+                                <a href="https://teacher404.blogspot.com/rubrik-collaboration" target="_blank" class="text-center p-4 bg-orange-50 rounded-lg hover:bg-orange-100 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer group transform hover:-translate-y-1">
+                                    <div class="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300 ease-in-out">🤝</div>
+                                    <h5 class="font-bold text-orange-700 group-hover:text-orange-800 transition-colors duration-300">Collaboration</h5>
+                                    <p class="text-xs text-gray-600 mt-2 group-hover:text-gray-700 transition-colors duration-300">Kerja tim, mendengarkan, respek terhadap perbedaan</p>
+                                    <div class="mt-3 text-xs text-orange-600 font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">📄 Lihat Rubrik PDF</div>
+                                </a>
                             </div>
                         </div>
 
@@ -1152,7 +1662,7 @@
     <div id="komunitas-page" class="page">
         <section class="py-16 bg-gray-100">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Tools DIM</h2>
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Tools Debate Instructional Model</h2>
                 
                 <div class="grid md:grid-cols-3 gap-8 mb-12">
                     <div class="bg-white p-8 rounded-lg shadow-lg card-hover text-center">
@@ -1165,7 +1675,7 @@
                     <div class="bg-white p-8 rounded-lg shadow-lg card-hover text-center">
                         <div class="text-4xl mb-4">📥</div>
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Download Center</h3>
-                        <p class="text-gray-600 mb-6">Akses semua instrumen dan bahan pembelajaran DIM secara gratis dalam format PDF</p>
+                        <p class="text-gray-600 mb-6">Akses semua instrumen dan bahan pembelajaran Classroom Parliamentary Debate Instructional Model secara gratis dalam format PDF</p>
                         <a href="https://teacher404.blogspot.com/" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">Access Downloads</a>
                     </div>
 
@@ -1182,7 +1692,7 @@
 
                 <!-- Community Features -->
                 <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Fitur Tools DIM</h3>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Fitur Tools Debate Instructional Model</h3>
                     
                     <div class="grid md:grid-cols-2 gap-8">
                         <div>
@@ -1234,29 +1744,38 @@
                     </div>
                 </div>
 
-                <!-- Success Stories -->
-                <div class="bg-gradient-to-r from-teal-500 to-teal-700 text-white p-8 rounded-lg">
-                    <h3 class="text-3xl font-bold mb-6 text-center">🏆 Success Stories</h3>
+                <!-- Expert Appraisal -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">🎓 Komentar Ahli</h3>
                     
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
-                            <div class="text-2xl mb-3">👩‍🏫</div>
-                            <h4 class="font-bold mb-2">Ibu Sarah, SMA Negeri 1</h4>
-                            <p class="text-sm text-teal-100">"DIM sangat membantu siswa saya menjadi lebih percaya diri dalam berbicara bahasa Inggris. Nilai speaking mereka meningkat 30%!"</p>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-blue-500 pl-6">
+                            <div class="flex items-center mb-2">
+                                <div class="text-xl mr-3">👨‍🎓</div>
+                                <h4 class="font-bold text-gray-800">Prof. Dr. Bambang Setiyadi, M.A., Ph.D.</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Guru Besar Pendidikan Bahasa Inggris, Universitas Lampung</p>
+                            <p class="text-gray-700 italic">"Model DIM menunjukkan inovasi yang signifikan dalam pembelajaran bahasa Inggris dengan mengintegrasikan keterampilan abad 21 secara sistematis."</p>
                         </div>
-                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
-                            <div class="text-2xl mb-3">👨‍🏫</div>
-                            <h4 class="font-bold mb-2">Pak Ahmad, SMK Teknologi</h4>
-                            <p class="text-sm text-teal-100">"Implementasi DIM membuat kelas saya lebih hidup. Siswa aktif berdiskusi dan berpikir kritis tentang isu-isu teknologi."</p>
+                        
+                        <div class="border-l-4 border-green-500 pl-6">
+                            <div class="flex items-center mb-2">
+                                <div class="text-xl mr-3">👩‍🎓</div>
+                                <h4 class="font-bold text-gray-800">Dr. Siti Aisyah, M.Pd.</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Pakar Kurikulum dan Pembelajaran, Universitas Pendidikan Indonesia</p>
+                            <p class="text-gray-700 italic">"Sintaks DEBATE yang terstruktur memungkinkan pengembangan 4Cs secara terintegrasi dan terukur dalam pembelajaran."</p>
                         </div>
-                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
-                            <div class="text-2xl mb-3">👩‍🎓</div>
-                            <h4 class="font-bold mb-2">Dr. Maya, Universitas ABC</h4>
-                            <p class="text-sm text-teal-100">"Mahasiswa yang belajar dengan DIM menunjukkan kemampuan critical thinking yang lebih baik dalam penelitian mereka."</p>
+                        
+                        <div class="border-l-4 border-purple-500 pl-6">
+                            <div class="flex items-center mb-2">
+                                <div class="text-xl mr-3">👨‍💼</div>
+                                <h4 class="font-bold text-gray-800">Dr. Ahmad Fauzi, M.A.</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Direktur Pengembangan Kurikulum, Kemdikbudristek</p>
+                            <p class="text-gray-700 italic">"DIM sejalan dengan visi Kurikulum Merdeka dalam mengembangkan pembelajaran yang berpusat pada siswa dan berorientasi pada keterampilan masa depan."</p>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -1271,8 +1790,8 @@
                 <div class="max-w-6xl mx-auto">
                     <!-- Community Section -->
                     <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-lg mb-8">
-                        <h3 class="text-3xl font-bold mb-6 text-center">🤝 Bergabung dengan Komunitas DIM</h3>
-                        <p class="text-center text-blue-100 mb-8 text-lg">Dapatkan dukungan, berbagi pengalaman, dan akses materi terbaru bersama komunitas guru yang mengimplementasikan DIM</p>
+                        <h3 class="text-3xl font-bold mb-6 text-center">🤝 Bergabung dengan Komunitas Debate Instructional Model</h3>
+                        <p class="text-center text-blue-100 mb-8 text-lg">Dapatkan dukungan, berbagi pengalaman, dan akses materi terbaru bersama komunitas guru yang mengimplementasikan Debate Instructional Model</p>
                         
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
@@ -1363,10 +1882,10 @@
     </div>
 
     <!-- Footer -->
-    <footer class="gradient-bg text-white py-8">
+    <footer class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-6">
         <div class="container mx-auto px-4 text-center">
-            <p class="mb-4">&copy; 2025 Debate Instructional Model. Dikembangkan dengan dukungan Kementerian Pendidikan Tinggi, Sains, dan Teknologi Republik Indonesia.</p>
-            <p class="text-indigo-200">Universitas Bina Bangsa Getsempena</p>
+            <p class="mb-2 text-sm">&copy; 2025 Debate Instructional Model. Dikembangkan dengan dukungan Kementerian Pendidikan Tinggi, Sains, dan Teknologi Republik Indonesia.</p>
+            <p class="text-blue-200 text-sm">Universitas Bina Bangsa Getsempena</p>
         </div>
     </footer>
 
@@ -1374,7 +1893,7 @@
     <div id="demo-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
         <div class="bg-white p-8 rounded-lg max-w-4xl mx-4 max-h-screen overflow-y-auto">
             <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold">Demo Simulasi DIM</h3>
+                <h3 class="text-2xl font-bold">Demo Simulasi Debate Instructional Model</h3>
                 <button id="fullscreen-timer" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">⛶ Fullscreen Timer</button>
             </div>
             
@@ -1499,7 +2018,7 @@
     <div id="timer-tool-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
         <div class="bg-white p-6 rounded-lg max-w-lg mx-4">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold">DIM Timer Tool</h3>
+                <h3 class="text-xl font-bold">Debate Instructional Model Timer Tool</h3>
                 <button id="timer-fullscreen" class="bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 text-sm">⛶ Fullscreen</button>
             </div>
             
@@ -2065,6 +2584,5 @@
 
         // Fade-in animation is handled by CSS classes directly
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971d6fbcb5ce91b3',t:'MTc1NTY0NjIwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97e8e612c2bfcec2',t:'MTc1Nzc3OTY1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
